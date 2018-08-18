@@ -2,10 +2,16 @@ package com.lhd.base.main;
 
 import android.app.Application;
 import android.content.Context;
+import android.support.multidex.MultiDex;
+import android.support.multidex.MultiDexApplication;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.GlideBuilder;
+import com.bumptech.glide.request.RequestOptions;
+import com.lhd.base.R;
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
 import com.nostra13.universalimageloader.cache.memory.impl.UsingFreqLimitedMemoryCache;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -16,7 +22,7 @@ import com.nostra13.universalimageloader.core.download.BaseImageDownloader;
 /**
  * Created by ywh on skit.
  */
-public class BaseApplication extends Application {
+public class BaseApplication extends MultiDexApplication {
 
     private static Context mContext;
     private static RequestQueue queues;
@@ -28,6 +34,22 @@ public class BaseApplication extends Application {
         mContext = this;
         queues = Volley.newRequestQueue(mContext);
         initImageLoader(mContext);
+        initGlide();
+    }
+
+    private void initGlide() {
+        GlideBuilder builder = new GlideBuilder();
+        RequestOptions options = new RequestOptions();
+        options.error(R.mipmap.icon_error);
+        options.dontAnimate();
+        builder.setDefaultRequestOptions(options);
+        Glide.init(this, builder);
+    }
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(base);
     }
 
     public static Context getContext() {

@@ -2,6 +2,7 @@ package com.lhd.base.main;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,8 +10,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.lhd.base.R;
-import com.lhd.base.my_interface.MyItemClickListener;
-import com.lhd.base.my_interface.RecyclerViewGetLayout;
+import com.lhd.base.interfaces.MyItemClickListener;
+import com.lhd.base.interfaces.RecyclerViewGetLayout;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.ImageScaleType;
@@ -105,5 +106,12 @@ public abstract class BaseListAdapter<T> extends RecyclerView.Adapter implements
                 .build(); // 构建完成
     }
 
+    public void itemMove(int from, int to) {
+
+    }
+
+    public List<T> getDataList() {
+        return mlist;
+    }
 
 }

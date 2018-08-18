@@ -1,0 +1,20 @@
+<resources>
+
+
+
+    <style name="normalDialog" parent="@style/Base.V7.Theme.AppCompat.Light.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="wheelDialog" parent="@style/Base.V7.Theme.AppCompat.Light.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/white</item>
+    </style>
+
+    <style name="bottomDialog.Animation" parent="Animation.AppCompat.Dialog">
+        <item name="android:windowEnterAnimation">@anim/taanlate_dialog_in</item>
+        <item name="android:windowExitAnimation">@anim/taanlate_dialog_out</item>
+    </style>
+
+</resources>

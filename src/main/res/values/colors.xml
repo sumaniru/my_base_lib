@@ -4,11 +4,18 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
+    <color name="province_line_border">#C7C7C7</color>  <!-- 地址选择器颜色 -->
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
     <color name="bg_f6">#f6f6f6</color>
+    <color name="bg_f2">#f2f2f2</color>
     <color name="luck_statusbar">#ffed76</color>
     <color name="black_222">#222222</color>
+    <color name="black_333">#333333</color>
     <color name="black_666">#666666</color>
     <color name="black_999">#999999</color>
+    <color name="theme_color">#ff8200</color>//根据项目更换
+    <color name="red">#ff0000</color>
+    <!--<color name="theme_color">#EF9B38</color>//根据项目更换-->
+
 </resources>
